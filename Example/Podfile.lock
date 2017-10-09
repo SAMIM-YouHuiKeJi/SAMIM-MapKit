@@ -1,0 +1,33 @@
+PODS:
+  - AMap2DMap-NO-IDFA (4.6.0):
+    - AMapFoundation-NO-IDFA (~> 1.3)
+  - AMapFoundation-NO-IDFA (1.4.2)
+  - AMapLocation-NO-IDFA (2.4.0):
+    - AMapFoundation-NO-IDFA (~> 1.4)
+  - AMapSearch-NO-IDFA (5.4.0):
+    - AMapFoundation-NO-IDFA (~> 1.4)
+  - MJRefresh (1.4.7)
+  - SAMIM-MapKit (0.1.0):
+    - AMap2DMap-NO-IDFA
+    - AMapLocation-NO-IDFA
+    - AMapSearch-NO-IDFA
+    - MJRefresh (~> 1.4.6)
+
+DEPENDENCIES:
+  - SAMIM-MapKit (from `../`)
+
+EXTERNAL SOURCES:
+  SAMIM-MapKit:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  AMap2DMap-NO-IDFA: 01c80e7e93568617b1b1b452cfec71f974f5bc8a
+  AMapFoundation-NO-IDFA: 3b9ce87abc6a37c718cc320687469d0b74d5c953
+  AMapLocation-NO-IDFA: 9493012d3241a7d551942c7c1e1069b51f295083
+  AMapSearch-NO-IDFA: efddeaa3f62f6adb8f0170ebff3d799bcf637ade
+  MJRefresh: 6b140993028fa30f1fcb88e82925a7c7911415cf
+  SAMIM-MapKit: 7ca240ec135e3137b89bc2bc42f02021a17eb6e9
+
+PODFILE CHECKSUM: 2f8a61195bbcef034b3e00fda4a188d6f5c6693e
+
+COCOAPODS: 1.1.1

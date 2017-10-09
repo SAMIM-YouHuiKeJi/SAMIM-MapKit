@@ -1,0 +1,1 @@
+../../../../../SAMIM-MapKit/Classes/Cell/SAMIMAMapHalfStyleTableViewCell.h

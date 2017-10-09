@@ -21,22 +21,26 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/811528603@qq.com/SAMIM-MapKit'
+  s.homepage         = 'https://github.com/SAMIM-YouHuiKeJi/SAMIM-MapKit'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { '811528603@qq.com' => '811528603@qq.com' }
-  s.source           = { :git => 'https://github.com/811528603@qq.com/SAMIM-MapKit.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/SAMIM-YouHuiKeJi/SAMIM-MapKit.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'SAMIM-MapKit/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'SAMIM-MapKit' => ['SAMIM-MapKit/Assets/*.png']
-  # }
+  s.resource_bundles = {
+     'SAMIM-MapKit' => ['SAMIM-MapKit/Assets/*']
+  }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'MJRefresh','~> 1.4.6'
+  s.dependency 'AMapLocation-NO-IDFA'
+  s.dependency 'AMapSearch-NO-IDFA'
+  s.dependency 'AMap2DMap-NO-IDFA'
 end
