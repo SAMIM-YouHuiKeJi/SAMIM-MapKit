@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [AMapServices sharedServices].apiKey = self.mapKey;//@"f25dfd8bb280effb099554e5048ee4ca";
+    [AMapServices sharedServices].apiKey = @"f25dfd8bb280effb099554e5048ee4ca";
 
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     self.view.backgroundColor = [UIColor whiteColor];
