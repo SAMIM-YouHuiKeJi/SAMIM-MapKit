@@ -43,7 +43,7 @@ static NSIndexPath *signIndexPath = nil;
     
     // Do any additional setup after loading the view.
     signIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    self.mapKey = @"f25dfd8bb280effb099554e5048ee4ca";
+//    self.mapKey = @"f25dfd8bb280effb099554e5048ee4ca";
     self.title = @"位置";
     ///地图需要v4.5.0及以上版本才必须要打开此选项（v4.5.0以下版本，需要手动配置info.plist）
     [[AMapServices sharedServices] setEnableHTTPS:YES];
@@ -297,6 +297,7 @@ static NSIndexPath *signIndexPath = nil;
     __weak typeof(_mapView) weakSelfMapView = _mapView;
         if (_resultTableView == nil) {
             _resultTableView = [[SAMIMMapSearchResultTableViewController alloc] init];
+            _resultTableView.mapKey = self.mapKey;
             _resultTableView.pushToVCBlock = ^(NSIndexPath *indexPath, id item) {
             AMapPOI *poi = item;
 

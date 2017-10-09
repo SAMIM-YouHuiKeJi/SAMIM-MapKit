@@ -40,7 +40,10 @@ static NSIndexPath *signIndexPath = nil;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     // Do any additional setup after loading the view.
     signIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
 //    self.mapKey = @"f25dfd8bb280effb099554e5048ee4ca";
@@ -58,10 +61,17 @@ static NSIndexPath *signIndexPath = nil;
     _mapView.zoomLevel = 15;
     [self.view addSubview:_mapView];
     
-   NSBundle *myBundle = [NSBundle bundleForClass:[self class]];
-    NSString *path = [[ myBundle resourcePath]stringByAppendingPathComponent:@"redPin.png"];
-    
-  UIImageView *centerPin = [[UIImageView alloc] initWithImage:[UIImage imageWithContentsOfFile:path]];
+//   NSBundle *myBundle = [NSBundle bundleForClass:[self class]];
+//    NSString *path = [[ myBundle resourcePath]stringByAppendingPathComponent:@"redPin.png"];
+
+    NSInteger scale = [[UIScreen mainScreen] scale];
+    NSBundle *currentBundle = [NSBundle bundleForClass:[self class]];
+    NSString *name = [NSString stringWithFormat:@"%@@%zdx",@"greenPin",scale];
+    NSString *dir = [NSString stringWithFormat:@"%@.bundle",@"SAMIM-MapKit"];
+    NSString *path  = [currentBundle pathForResource:name ofType:@"png" inDirectory:dir];
+    UIImage *image = [UIImage imageWithContentsOfFile:path];
+
+  UIImageView *centerPin = [[UIImageView alloc] initWithImage:image];
 //    UIImageView *centerPin = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"redPin"]];
 
     centerPin.frame = CGRectMake(CGRectGetMidX(_mapView.frame)-22, CGRectGetMidY(_mapView.frame)-36-64-40, 44, 72);
@@ -75,9 +85,13 @@ static NSIndexPath *signIndexPath = nil;
     
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(_mapView.frame.size.width-60, _mapView.frame.size.height-70, 40, 40)];
     [_mapView addSubview:button];
-    NSString *locpath = [[ myBundle resourcePath]stringByAppendingPathComponent:@"loc.png"];
+//    NSString *locpath = [[ myBundle resourcePath]stringByAppendingPathComponent:@"loc.png"];
 //
-    [button setImage:[UIImage imageWithContentsOfFile:locpath] forState:UIControlStateNormal];
+    NSString *name2 = [NSString stringWithFormat:@"%@@2x",@"loc"];
+    NSString *dir2 = [NSString stringWithFormat:@"%@.bundle",@"SAMIM-MapKit"];
+    NSString *path2  = [currentBundle pathForResource:name2 ofType:@"png" inDirectory:dir2];
+    UIImage *image2 = [UIImage imageWithContentsOfFile:path2];
+    [button setImage:image2 forState:UIControlStateNormal];
 //    [button setImage:[UIImage imageNamed:@"loc"] forState:UIControlStateNormal];
 
     button.backgroundColor = [UIColor whiteColor];
@@ -286,7 +300,7 @@ static NSIndexPath *signIndexPath = nil;
         _searchBar             = [[UISearchBar alloc] init];
         _searchBar.delegate    = self;
         _searchBar.placeholder = @"搜索";
-        _searchBar.frame       = CGRectMake(0, 64, self.view.frame.size.width, 40);
+        _searchBar.frame       = CGRectMake(0, 0, self.view.frame.size.width, 40);
         }
         return _searchBar;
 

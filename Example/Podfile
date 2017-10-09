@@ -3,12 +3,12 @@
 #source 'https://github.com/CocoaPods/Specs.git'
 
 target 'SAMIM-MapKit_Example' do
-    #pod 'SAMIM-MapKit'
+    # pod 'SAMIM-MapKit'
   pod 'SAMIM-MapKit', :path => '../'
 
   target 'SAMIM-MapKit_Tests' do
     inherit! :search_paths
 
 
-  end
+end
 end
