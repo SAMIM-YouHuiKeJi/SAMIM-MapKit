@@ -7,7 +7,7 @@ PODS:
   - AMapSearch-NO-IDFA (5.4.0):
     - AMapFoundation-NO-IDFA (~> 1.4)
   - MJRefresh (1.4.7)
-  - SAMIM-MapKit (0.1.1):
+  - SAMIM-MapKit (0.1.2):
     - AMap2DMap-NO-IDFA
     - AMapLocation-NO-IDFA
     - AMapSearch-NO-IDFA
@@ -26,7 +26,7 @@ SPEC CHECKSUMS:
   AMapLocation-NO-IDFA: 9493012d3241a7d551942c7c1e1069b51f295083
   AMapSearch-NO-IDFA: efddeaa3f62f6adb8f0170ebff3d799bcf637ade
   MJRefresh: 6b140993028fa30f1fcb88e82925a7c7911415cf
-  SAMIM-MapKit: eaa10a6d3f1cc7c653725290e13e693f88416f02
+  SAMIM-MapKit: 49442a87fcf967c39a73a5b9db930809a8c12c95
 
 PODFILE CHECKSUM: d5462ee4488e9b70a591a96e2edf77cc2f6f6429
 

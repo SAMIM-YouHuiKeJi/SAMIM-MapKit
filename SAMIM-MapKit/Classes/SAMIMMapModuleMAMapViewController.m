@@ -42,8 +42,7 @@ static NSIndexPath *signIndexPath = nil;
     [super viewDidLoad];
 
     self.view.backgroundColor = [UIColor whiteColor];
-    self.automaticallyAdjustsScrollViewInsets = NO;
-    self.edgesForExtendedLayout = UIRectEdgeNone;
+
     // Do any additional setup after loading the view.
     signIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
 //    self.mapKey = @"f25dfd8bb280effb099554e5048ee4ca";
@@ -55,7 +54,7 @@ static NSIndexPath *signIndexPath = nil;
     [self.view addSubview:self.searchBar];
     ///初始化地图
     
-    _mapView = [[MAMapView alloc] initWithFrame:CGRectMake(0, 64+40, self.view.frame.size.width, self.view.frame.size.height/2+50-64-40)];
+    _mapView = [[MAMapView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.searchBar.frame), self.view.frame.size.width, self.view.frame.size.height/2)];
     ///把地图添加至view
     _mapView.delegate = self;
     _mapView.zoomLevel = 15;
@@ -66,7 +65,7 @@ static NSIndexPath *signIndexPath = nil;
 
     NSInteger scale = [[UIScreen mainScreen] scale];
     NSBundle *currentBundle = [NSBundle bundleForClass:[self class]];
-    NSString *name = [NSString stringWithFormat:@"%@@%zdx",@"greenPin",scale];
+    NSString *name = [NSString stringWithFormat:@"%@@%zdx",@"redPin",scale];
     NSString *dir = [NSString stringWithFormat:@"%@.bundle",@"SAMIM-MapKit"];
     NSString *path  = [currentBundle pathForResource:name ofType:@"png" inDirectory:dir];
     UIImage *image = [UIImage imageWithContentsOfFile:path];
@@ -74,7 +73,7 @@ static NSIndexPath *signIndexPath = nil;
   UIImageView *centerPin = [[UIImageView alloc] initWithImage:image];
 //    UIImageView *centerPin = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"redPin"]];
 
-    centerPin.frame = CGRectMake(CGRectGetMidX(_mapView.frame)-22, CGRectGetMidY(_mapView.frame)-36-64-40, 44, 72);
+    centerPin.frame = CGRectMake(CGRectGetMidX(_mapView.frame)-22, CGRectGetMidY(_mapView.frame)-36-40, 44, 72);
     [_mapView addSubview:centerPin];
     
     [self.view addSubview:self.tableView];
